@@ -13,8 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.prefix>192.168.3.202:5000/</docker.image.prefix>
-	</properties>
-	<exclusions>
+	</properties><exclusions>
 		<exclusion>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
