@@ -16,10 +16,15 @@ import org.springframework.web.bind.annotation.*;
 public class App {
     @Value("${spring.cloud.consul.host}")
     private String consulHost;
+
+    @Value("${spring.cloud.consul.discovery.instanceId}")
+    private String serviceId;
+
+
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World my frist for spring cloud!("+consulHost+")";
+        return "Hello World my frist for spring cloud!("+consulHost+","+serviceId+")";
     }
 
     public static void main(String[] args) throws Exception {
