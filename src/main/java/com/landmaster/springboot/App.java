@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 //@EnableDiscoveryClient
 @RestController
 public class App {
-    @Value("spring.cloud.consul.host")
+    @Value("${spring.cloud.consul.host}")
     private String consulHost;
     @RequestMapping("/")
     @ResponseBody
