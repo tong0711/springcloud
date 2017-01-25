@@ -20,11 +20,13 @@ public class App {
     @Value("${spring.cloud.consul.discovery.instanceId}")
     private String serviceId;
 
-
+    @Value("${HOST_IP}")
+    private String hostIP;
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World my frist for spring cloud!("+consulHost+","+serviceId+")";
+        return "Hello World my frist for spring cloud!("+consulHost+","+serviceId+","+hostIP+")";
+
     }
 
     public static void main(String[] args) throws Exception {
