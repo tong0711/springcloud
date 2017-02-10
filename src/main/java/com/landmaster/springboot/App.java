@@ -24,12 +24,6 @@ import java.util.Set;
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
-
-
-
-
-
-
 public class App {
 
     @Autowired
@@ -46,11 +40,11 @@ public class App {
     @ResponseBody
     String home(   @RequestHeader HttpHeaders headers) {
       Set keies=  headers.entrySet();
+      String header="";
       for(Object o:keies){
-          System.out.println(o);
-
+                header="|"+o;
       }
-        return "Hello World my frist for spring cloud!("+consulHost+","+serviceId+","+hostIP+") ";
+        return "Hello World my frist for spring cloud!("+consulHost+","+serviceId+","+hostIP+") "+header;
 
     }
 
@@ -66,14 +60,6 @@ public class App {
         return env.getProperty(prop, "Not Found");
     }
 
-    @RequestMapping("/prop")
-    public String prop() {
-        return sampleProperties().getProp();
-    }
-    @Bean
-    public SampleProperties sampleProperties() {
-        return new SampleProperties();
-    }
 
     public static void main(String[] args) throws Exception {
     	
